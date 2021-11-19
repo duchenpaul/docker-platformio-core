@@ -50,6 +50,10 @@ Jenkins will periodically poll the SCM repository for changes and trigger a buil
 
 ## Manual Usage
 Add the script platformio.sh to your path and run platformio < options >. 
+### Build image
+```bash
+docker build -t platformio-core .
+```
 
 ### Uploading
 For convenience, the script checks if the host device /dev/ttyUSB0 is available and adds this device to the Docker container. You can override this device by setting the environment variable UPLOAD_PORT.
