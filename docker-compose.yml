@@ -2,9 +2,9 @@ version: "2"
 services:
   arduino-cli:
     container_name: platformio-core
-    image: platformio-core
+    # image: platformio-core
     # Build lively
-    # build: .
+    build: .
     volumes:
       - /home/pi/docker_files/platformio-core/library:/.platformio
       - /home/pi/docker_files/platformio-core/workspace:/workspace
