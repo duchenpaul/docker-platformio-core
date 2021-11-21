@@ -4,8 +4,8 @@ ENV APP_VERSION="5.1.0" \
     APP="platformio-core"
 
 LABEL app.name="${APP}" \
-      app.version="${APP_VERSION}" \
-      maintainer="Sebastian Glahn <hi@sgla.hn>"
+    app.version="${APP_VERSION}" \
+    maintainer="Sebastian Glahn <hi@sgla.hn>"
 
 RUN pip install -U platformio && \
     mkdir -p /workspace && \
@@ -17,5 +17,5 @@ USER 1001
 
 WORKDIR /workspace
 
-ENTRYPOINT ["platformio"] 
+ENTRYPOINT ["platformio", "run", "-t", "upload"] 
 
