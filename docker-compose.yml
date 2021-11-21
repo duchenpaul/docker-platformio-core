@@ -6,7 +6,7 @@ services:
     # Build lively
     build: .
     volumes:
-      - /home/pi/docker_files/platformio-core/library:/.platformio
+      - /home/pi/docker_files/platformio-core/library:/root/.platformio
       - /home/pi/docker_files/platformio-core/workspace:/workspace
     devices:
       - "/dev/ttyUSB0:/dev/ttyUSB0"
