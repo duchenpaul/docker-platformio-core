@@ -17,5 +17,5 @@ USER 1001
 
 WORKDIR /workspace
 
-ENTRYPOINT ["platformio", "run", "-t", "upload"] 
+CMD ["platformio", "run", "-t", "upload"] 
 
