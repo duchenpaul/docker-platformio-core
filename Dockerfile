@@ -17,7 +17,7 @@ RUN pip install -U platformio && \
     && pip install clang
 
 RUN git clone https://gitee.com/duchenpaul/ino2cpp.git && \
-    cd ino2cpp && sed -i "s/import platform/import platform;clang.cindex.Config.set_library_file('/usr/lib/llvm-7/lib/libclang.so')/g" ino2cpp.py && \
+    cd ino2cpp && sed -i "s#import platform#import platform;clang.cindex.Config.set_library_file('/usr/lib/llvm-7/lib/libclang.so')#g" ino2cpp.py && \
     ln -s ino2cpp.py /usr/bin/ino2cpp
 
 WORKDIR /workspace
