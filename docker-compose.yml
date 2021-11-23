@@ -1,6 +1,6 @@
 version: "2"
 services:
-  arduino-cli:
+  platformio-core:
     container_name: platformio-core
     # image: platformio-core
     # Build lively
