@@ -16,9 +16,9 @@ RUN pip install -U platformio && \
     apt update && apt install -y git libclang-dev && apt-get clean autoclean && apt-get autoremove --yes && rm -rf /var/lib/{apt,dpkg,cache,log}/ \
     && pip install clang
 
-RUN git clone https://gitee.com/duchenpaul/ino2cpp.git && \
+RUN cd "${HOME}" && git clone https://gitee.com/duchenpaul/ino2cpp.git && \
     cd ino2cpp && sed -i "s#import platform#import platform;clang.cindex.Config.set_library_file('/usr/lib/llvm-7/lib/libclang.so')#g" ino2cpp.py && \
-    ln -s ino2cpp.py /usr/bin/ino2cpp
+    ln -s "${HOME}"/ino2cpp.py /usr/bin/ino2cpp
 
 WORKDIR /workspace
 
